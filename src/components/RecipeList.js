@@ -1,5 +1,6 @@
 import React from 'react';
 import {Accordion, Button, Table} from 'semantic-ui-react';
+import ShowRecipeModal from './ShowRecipeModal';
 
 const RecipeList = (props) => {
   
@@ -29,7 +30,7 @@ const RecipeList = (props) => {
                 <Table.Cell style={{verticalAlign: 'top'}}>Yeast:</Table.Cell>
                 <Table.Cell>{recipe.yeast}</Table.Cell>
               </Table.Row>
-              {recipe.otherIngredients.length ? <Table.Row>
+              {recipe.otherIngredients[0].name.length ? <Table.Row>
                 <Table.Cell style={{verticalAlign: 'top'}}>Other:</Table.Cell>
                 <Table.Cell>{recipe.otherIngredients.map((otherIngredient, i) => <div key={i}>{otherIngredient.name}, {otherIngredient.amount}, {otherIngredient.time}<br/></div>)}</Table.Cell>
               </Table.Row> : null}
@@ -39,6 +40,7 @@ const RecipeList = (props) => {
               </Table.Row>
             </Table.Body>
           </Table>
+          <ShowRecipeModal newOrEdit='edit' recipeToEdit={recipe} modalName='Edit Recipe' />
           <Button color='red' content='Delete Recipe' onClick={() => props.onDeleteClick(recipe.id)}/>
         </div>
       ),

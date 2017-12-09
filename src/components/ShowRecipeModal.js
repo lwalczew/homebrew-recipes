@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, Header, Modal} from 'semantic-ui-react';
 import RecipeFormContainer from './RecipeFormContainer';
 
-class NewRecipeModal extends Component {
+class ShowRecipeModal extends Component {
   state = { modalOpen: false }
   
   handleOpen = () => this.setState({ modalOpen: true })
@@ -12,17 +12,17 @@ class NewRecipeModal extends Component {
   render() {
     return (
       <Modal
-        trigger={<Button onClick={this.handleOpen}>Add New Recipe</Button>}
+        trigger={<Button onClick={this.handleOpen}>{this.props.modalName}</Button>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
       >
-        <Header icon='beer' content='Add New Recipe' />
+        <Header icon='beer' content={this.props.modalName} />
         <Modal.Content>
-          <RecipeFormContainer newOrEdit='new' handleModalClose={this.handleClose}/>
+          <RecipeFormContainer newOrEdit={this.props.newOrEdit} handleModalClose={this.handleClose} recipeToEdit={this.props.recipeToEdit} />
         </Modal.Content>
       </Modal>
     )
   }
 }
 
-export default NewRecipeModal;
+export default ShowRecipeModal;

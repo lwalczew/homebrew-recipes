@@ -89,7 +89,13 @@ export const initialRecipes = [
       }
     ],
     yeast: 'Wyeast 1214',
-    otherIngredients: [],
+    otherIngredients: [
+      {
+        name: '',
+        amount: '',
+        time: ''
+      }
+    ],
     directions: 'Standard brewing instructions.'
   }
 ]

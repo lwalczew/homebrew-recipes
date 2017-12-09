@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Container} from 'semantic-ui-react';
 import './App.css';
 import RecipeListContainer from './components/RecipeListContainer';
-import NewRecipeModal from './components/NewRecipeModal';
+import ShowRecipeModal from './components/ShowRecipeModal';
 
 
 
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Container>
         <RecipeListContainer />
-        <NewRecipeModal />
+        <ShowRecipeModal newOrEdit='new' modalName='Add New Recipe' />
       </Container>
     );
   }

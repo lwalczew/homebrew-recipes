@@ -11,20 +11,11 @@ const recipes = (state = initialRecipes, action) => {
     case 'DELETE_RECIPE':
       return state.filter(recipe => recipe.id !== action.id)
 
-    case 'UPDATE_RECIPE':
-      const otherRecipes = state.filter(recipe => recipe.id !== action.id);
+    case 'EDIT_RECIPE':
+      const otherRecipes = state.filter(recipe => recipe.id !== action.recipe.id);
       return sortRecipesByName([
         ...otherRecipes,
-        {
-          id: action.id,
-          name: action.name,
-          style: action.style,
-          malt: action.malt,
-          hops: action.hops,
-          yeast: action.yeast,
-          otherIngredients: action.other,
-          directions: action.directions
-        }
+        action.recipe
       ])
 
     default:

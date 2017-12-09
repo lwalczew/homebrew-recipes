@@ -6,7 +6,7 @@ import Guid from 'guid';
 class RecipeForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = this.props.newOrEdit === 'new' ? {
       maltGroups: 1,
       hopsGroups: 1,
       otherIngredientsGroups: 1,
@@ -17,6 +17,17 @@ class RecipeForm extends Component {
       yeast: '',
       otherIngredients: [{name: '', amount: '', time: ''}],
       directions: ''
+    } : {
+      maltGroups: this.props.recipeToEdit.malt.length,
+      hopsGroups: this.props.recipeToEdit.hops.length,
+      otherIngredientsGroups: this.props.recipeToEdit.otherIngredients.length,
+      name: this.props.recipeToEdit.name,
+      style: this.props.recipeToEdit.style,
+      malt: this.props.recipeToEdit.malt,
+      hops: this.props.recipeToEdit.hops,
+      yeast: this.props.recipeToEdit.yeast,
+      otherIngredients: this.props.recipeToEdit.otherIngredients,
+      directions: this.props.recipeToEdit.directions,
     }
     this.baseState = this.state;
   }
@@ -36,7 +47,7 @@ class RecipeForm extends Component {
 
   handleSubmit = () => {
     const thisRecipe = {
-      id: Guid.create().value,
+      id: this.props.newOrEdit==='new' ? Guid.create().value : this.props.recipeToEdit.id,
       name: this.state.name,
       style: this.state.style,
       malt: this.state.malt.slice(0, this.state.maltGroups),
@@ -45,8 +56,8 @@ class RecipeForm extends Component {
       otherIngredients: this.state.otherIngredients.slice(0, this.state.otherIngredientsGroups),
       directions: this.state.directions
     }
-    this.props.addRecipe(thisRecipe);
-    if (this.props.newOrEdit === 'new') this.props.handleModalClose();
+    this.props.newOrEdit==='new' ? this.props.addRecipe(thisRecipe) : this.props.editRecipe(thisRecipe);
+    this.props.handleModalClose();
   }
 
   render() {

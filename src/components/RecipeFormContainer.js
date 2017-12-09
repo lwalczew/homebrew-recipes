@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import RecipeForm from './RecipeForm';
-import {addRecipe} from '../actions';
+import {addRecipe, editRecipe} from '../actions';
 
 const mapStateToProps = (state, ownProps) => ({
   recipes: state.recipes,
@@ -11,6 +11,9 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   addRecipe: recipe => {
     dispatch(addRecipe(recipe))
+  },
+  editRecipe: recipe => {
+    dispatch(editRecipe(recipe))
   }
 });
 

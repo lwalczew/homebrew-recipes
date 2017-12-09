@@ -2,7 +2,8 @@ export const styleNames = [
   'India Pale Ale (IPA)',
   'American Pale Ale',
   'Stout',
-  'Porter'
+  'Porter',
+  'Belgian Dubbel'
 ].map(x => ({value: x, text: x, key: x}))
 
 export const maltNames = [
@@ -11,7 +12,12 @@ export const maltNames = [
   'Bavarian Wheat LME',
   'Munich LME',
   'Rye LME',
-  'Traditional Dark LME'
+  'Traditional Dark LME',
+  'Belgian Biscuit',
+  'Crystal 20',
+  'Crystal 60',
+  'Amber LME',
+  'Cara Red'
 ].map(x => ({value: x, text: x, key: x}))
 
 export const hopNames = [
@@ -20,7 +26,8 @@ export const hopNames = [
   'Mosaic',
   'Vic Secret',
   'Motueka',
-  'Cascade'
+  'Cascade',
+  'Perle'
 ].map(x => ({value: x, text: x, key: x}))
 
 export const yeastNames = [
