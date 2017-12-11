@@ -97,5 +97,54 @@ export const initialRecipes = [
       }
     ],
     directions: 'Standard brewing instructions.'
+  },
+  {
+    id: '3', 
+    name: 'Holiday Cheer Ale', 
+    style: 'Brown Ale',
+    malt: [
+      {
+        name: 'Amber LME',
+        amount: '1 can'
+      },
+      {
+        name: 'Golden Light LME',
+        amount: '1 can'
+      },
+      {
+        name: 'Crystal 60',
+        amount: '8 oz.'
+      },
+      {
+        name: 'Brown Malt',
+        amount: '1 lb.'
+      }
+    ],
+    hops: [
+      {
+        name: 'Hallertau',
+        amount: '5 AAU',
+        time: '60m'
+      }
+    ],
+    yeast: 'Safale US-05',
+    otherIngredients: [
+      {
+        name: 'Cinnamon Stick',
+        amount: '4 sticks',
+        time: '5m'
+      },
+      {
+        name: 'Ginger Root',
+        amount: '0.5 oz.',
+        time: '5m'
+      },
+      {
+        name: 'Nutmeg',
+        amount: '1 tsp.',
+        time: '5m'
+      }
+    ],
+    directions: 'Add all other ingredients at 5m left in boil.  Do not add in too early to avoid boiling off flavors and aromas.'
   }
 ]

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Header, Modal} from 'semantic-ui-react';
+import {Button, Header, Modal, Segment} from 'semantic-ui-react';
 import RecipeFormContainer from './RecipeFormContainer';
 
 class ShowRecipeModal extends Component {
@@ -12,7 +12,7 @@ class ShowRecipeModal extends Component {
   render() {
     return (
       <Modal
-        trigger={<Button onClick={this.handleOpen}>{this.props.modalName}</Button>}
+        trigger={<Button style={{margin: '1em 0'}}onClick={this.handleOpen} color='blue' fluid={this.props.isFluid}>{this.props.modalName}</Button>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
       >

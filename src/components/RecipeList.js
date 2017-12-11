@@ -41,7 +41,7 @@ const RecipeList = (props) => {
             </Table.Body>
           </Table>
           <ShowRecipeModal newOrEdit='edit' recipeToEdit={recipe} modalName='Edit Recipe' />
-          <Button color='red' content='Delete Recipe' onClick={() => props.onDeleteClick(recipe.id)}/>
+          <Button style={{marginLeft: '0.5em'}}color='red' content='Delete Recipe' onClick={() => props.onDeleteClick(recipe.id)}/>
         </div>
       ),
       key: `content-${recipe.id}`
@@ -51,7 +51,7 @@ const RecipeList = (props) => {
 
 
   return (
-    <Accordion panels={accordionPanels} styled/>
+    <Accordion panels={accordionPanels} exclusive={false} styled/>
   )
 
 }

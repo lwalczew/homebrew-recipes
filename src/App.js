@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import {Container} from 'semantic-ui-react';
+import {Container, Grid} from 'semantic-ui-react';
 import './App.css';
 import RecipeListContainer from './components/RecipeListContainer';
-import ShowRecipeModal from './components/ShowRecipeModal';
-import VisibilityFilterContainer from './components/VisibilityFilterContainer'
-
+import ActionsSidebar from './components/ActionsSidebar';
 
 
 class App extends Component {
   render() {
     return (
-      <Container>
-        <RecipeListContainer />
-        <ShowRecipeModal newOrEdit='new' modalName='Add New Recipe' />
-        <VisibilityFilterContainer />
+      <Container style={{marginTop: '1em'}}>
+        <Grid>
+          <Grid.Column width={6}>
+            <ActionsSidebar />
+          </Grid.Column>
+          <Grid.Column width={10}>
+            <RecipeListContainer />
+          </Grid.Column>
+        </Grid>
       </Container>
     );
   }

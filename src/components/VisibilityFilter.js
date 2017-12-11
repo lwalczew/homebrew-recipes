@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form} from 'semantic-ui-react';
+import {Form, Header, Segment} from 'semantic-ui-react';
 
 const VisibilityFilter = (props) => {
   
@@ -8,7 +8,8 @@ const VisibilityFilter = (props) => {
   }
   
   return (
-    <Form>
+    <Form inverted size='tiny' >
+      <Header inverted content='Filter recipes by...' />
       <Form.Input label='Recipe Name' name='name' value={props.visibilityFilter.name} onChange={handleChange} />
       <Form.Input label='Style' name='style' value={props.visibilityFilter.style} onChange={handleChange} />
       <Form.Input label='Malt' name='malt' value={props.visibilityFilter.malt} onChange={handleChange} />

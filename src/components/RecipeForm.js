@@ -82,7 +82,7 @@ class RecipeForm extends Component {
           i={i}
           onChange={this.handleArrayChange} 
           placeholder='Amount (1 can, 1.5 lb., etc.)' />
-        {this.state.maltGroups === i+1 ? <Popup trigger={<Form.Button size='small' circular icon='add' category='maltGroups' onClick={this.newRow}/>} content='Add another hop' /> : null}
+        {this.state.maltGroups === i+1 ? <Popup trigger={<Form.Button size='small' circular icon='add' category='maltGroups' onClick={this.newRow}/>} content='Add another malt' /> : null}
         {this.state.maltGroups === i+1 && this.state.maltGroups > 1 ? <Popup trigger={<Form.Button size='small' circular color='red' icon='minus' category='maltGroups' onClick={this.deleteRow}/>} content='Delete row' /> : null}
       </Form.Group>
     ))
@@ -143,7 +143,7 @@ class RecipeForm extends Component {
           i={i} 
           placeholder='Time to add' 
           onChange={this.handleArrayChange} />
-        {this.state.otherIngredientsGroups === i+1 ? <Popup trigger={<Form.Button size='small' circular icon='add' category='otherIngredientsGroups' onClick={this.newRow}/>} content='Add another hop' /> : null}
+        {this.state.otherIngredientsGroups === i+1 ? <Popup trigger={<Form.Button size='small' circular icon='add' category='otherIngredientsGroups' onClick={this.newRow}/>} content='Add another ingredient' /> : null}
         {this.state.otherIngredientsGroups === i+1 && this.state.otherIngredientsGroups > 1 ? <Popup trigger={<Form.Button size='small' circular color='red' icon='minus' category='otherIngredientsGroups' onClick={this.deleteRow}/>} content='Delete row' /> : null}
       </Form.Group>
     ))
