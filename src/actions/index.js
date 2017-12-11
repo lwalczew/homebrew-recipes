@@ -13,3 +13,8 @@ export const deleteRecipe = (id) => ({
   type: 'DELETE_RECIPE',
   id
 })
+
+export const setVisibilityFilter = (filter) => ({
+  type: 'SET_VISIBILITY_FILTER',
+  filter
+})

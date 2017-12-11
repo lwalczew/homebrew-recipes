@@ -4,7 +4,7 @@ import ShowRecipeModal from './ShowRecipeModal';
 
 const RecipeList = (props) => {
   
-  const accordionPanels = props.recipes.map(recipe => ({
+  const accordionPanels = props.visibleRecipes.map(recipe => ({
     title: {
       content: recipe.name,
       key: `title-${recipe.id}`
